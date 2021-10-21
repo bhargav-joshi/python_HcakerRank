@@ -1,7 +1,4 @@
-import sys
-
-n = int(input())
-if n%2==1 or n in range (5,21):
-    print("Weird")
-else:
-    print("Not Weird")
+if __name__ == '__main__':
+  
+  N = int(input())
+  print(("Not" if N%2==0 and (N<=4 or N>20) else "") + "Weird")

@@ -49,16 +49,10 @@
 
 #                                                        SOLUTION
 
-marksheet=[]
-scorelist=[]
-if __name__ == '__main__':
-        for _ in range(int(input())):
-                name = input()
-                score = float(input())
-                marksheet+=[[name,score]]
-                scorelist+=[score]
-        b=sorted(list(set(scorelist)))[1] 
-
-        for a,c in sorted(marksheet):
-             if c==b:
-                    print(a)
+N=int(input())
+a=sorted([[input(),float(input())] for _ in range(N)])
+b=[a[i][1] for i in range(N)]
+m=min(b)
+while min(b)==m:
+    b.remove(m)
+print ('\n'.join([a[i][0] for i in range(N) if a[i][1]==min(b)]))
